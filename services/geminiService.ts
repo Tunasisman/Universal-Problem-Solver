@@ -177,7 +177,13 @@ export const solveProblem = async (
   audioBlob: Blob | null
 ): Promise<{ response: SolverResponse; chat: Chat }> => {
   try {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      throw new Error(
+        "GEMINI_API_KEY is not set. Copy .env.example to .env.local and add your key."
+      );
+    }
+    const ai = new GoogleGenAI({ apiKey });
     
     const parts: any[] = [];
 
