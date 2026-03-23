@@ -1,0 +1,8 @@
+{
+  "name": "Universal Problem Solver",
+  "description": "An advanced multimodal reasoning agent that solves problems using images, text, and audio inputs.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
